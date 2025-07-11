@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Dra. Ana Silva | Dicas de Saúde Bucal</title>
+    <meta name="description" content="Blog com dicas de saúde bucal, cuidados dentários e informações sobre tratamentos odontológicos pela Dra. Ana Silva.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .blog-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            text-align: center;
+        }
+
+        .blog-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .blog-hero p {
+            font-size: 1.25rem;
+            color: #64748b;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            padding: 60px 0;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 2rem;
+        }
+
+        .blog-category {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .blog-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .blog-card p {
+            color: #64748b;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #94a3b8;
+            font-size: 0.875rem;
+        }
+
+        .blog-meta i {
+            color: #2563eb;
+        }
+
+        .read-more {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+
+        .read-more:hover {
+            gap: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .blog-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <i class="fas fa-tooth"></i>
+                <span>Dra. Ana Silva</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#servicos">Serviços</a></li>
+                <li><a href="index.html#depoimentos">Depoimentos</a></li>
+                <li><a href="page2.html" aria-current="page">Blog</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+            <button class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <h1>Blog de Saúde Bucal</h1>
+            <p>Dicas, informações e curiosidades sobre cuidados dentários para manter seu sorriso sempre saudável</p>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blog-posts">
+        <div class="container">
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <img src="https://images.pexels.com/photos/6812540/pexels-photo-6812540.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Clareamento dental">
+                    <div class="blog-card-content">
+                        <span class="blog-category">Estética Dental</span>
+                        <h3>Clareamento Dental: Tudo que Você Precisa Saber</h3>
+                        <p>Descubra os diferentes tipos de clareamento dental, como funciona o processo e quais cuidados são necessários para manter os resultados por mais tempo.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 15 Jan 2024</span>
+                            <span><i class="fas fa-clock"></i> 5 min de leitura</span>
+                        </div>
+                        <br>
+                        <a href="#" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://images.pexels.com/photos/6812589/pexels-photo-6812589.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Ortodontia invisível">
+                    <div class="blog-card-content">
+                        <span class="blog-category">Ortodontia</span>
+                        <h3>Invisalign vs Aparelho Tradicional: Qual Escolher?</h3>
+                        <p>Compare as vantagens e desvantagens do aparelho invisível Invisalign com o aparelho tradicional para fazer a melhor escolha para seu caso.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 10 Jan 2024</span>
+                            <span><i class="fas fa-clock"></i> 7 min de leitura</span>
+                        </div>
+                        <br>
+                        <a href="#" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://images.pexels.com/photos/6812571/pexels-photo-6812571.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Lentes de contato dental">
+                    <div class="blog-card-content">
+                        <span class="blog-category">Estética Dental</span>
+                        <h3>Lentes de Contato Dental: O Segredo do Sorriso Perfeito</h3>
+                        <p>Entenda como as lentes de contato dental podem transformar seu sorriso, quem pode fazer o tratamento e quais são os cuidados necessários.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 5 Jan 2024</span>
+                            <span><i class="fas fa-clock"></i> 6 min de leitura</span>
+                        </div>
+                        <br>
+                        <a href="#" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://images.pexels.com/photos/6812582/pexels-photo-6812582.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Implantes dentários">
+                    <div class="blog-card-content">
+                        <span class="blog-category">Implantodontia</span>
+                        <h3>Implantes Dentários: Recupere Sua Qualidade de Vida</h3>
+                        <p>Saiba como os implantes dentários podem devolver a funcionalidade e estética do seu sorriso, e quais são as etapas do tratamento.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 28 Dez 2023</span>
+                            <span><i class="fas fa-clock"></i> 8 min de leitura</span>
+                        </div>
+                        <br>
+                        <a href="#" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://images.pexels.com/photos/6812564/pexels-photo-6812564.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Higiene bucal">
+                    <div class="blog-card-content">
+                        <span class="blog-category">Prevenção</span>
+                        <h3>10 Dicas Essenciais para uma Higiene Bucal Perfeita</h3>
+                        <p>Aprenda as melhores práticas de higiene bucal para prevenir cáries, gengivite e manter seus dentes e gengivas sempre saudáveis.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 20 Dez 2023</span>
+                            <span><i class="fas fa-clock"></i> 4 min de leitura</span>
+                        </div>
+                        <br>
+                        <a href="#" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://images.pexels.com/photos/6812595/pexels-photo-6812595.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Harmonização facial">
+                    <div class="blog-card-content">
+                        <span class="blog-category">Harmonização</span>
+                        <h3>Harmonização Facial: Equilibrando Beleza e Naturalidade</h3>
+                        <p>Descubra como a harmonização facial pode realçar sua beleza natural e quais procedimentos são mais indicados para cada tipo de rosto.</p>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> 15 Dez 2023</span>
+                            <span><i class="fas fa-clock"></i> 6 min de leitura</span>
+                        </div>
+                        <br>
+                        <a href="#" class="read-more">Ler mais <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="contact" style="padding: 60px 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tem alguma dúvida?</h2>
+                <p>Entre em contato conosco para esclarecer suas questões sobre saúde bucal</p>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="index.html#agendamento" class="btn btn-primary">Agende sua Consulta</a>
+                <a href="https://wa.me/5511999999999" class="btn btn-whatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <i class="fas fa-tooth"></i>
+                        <span>Dra. Ana Silva</span>
+                    </div>
+                    <p>Transformando sorrisos com tecnologia de ponta e atendimento humanizado há mais de 15 anos.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/5511999999999" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="index.html#servicos">Ortodontia</a></li>
+                        <li><a href="index.html#servicos">Lentes de Contato Dental</a></li>
+                        <li><a href="index.html#servicos">Clareamento Dental</a></li>
+                        <li><a href="index.html#servicos">Implantes e Próteses</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Rua Augusta, 1234 - São Paulo</li>
+                        <li><i class="fas fa-phone"></i> (11) 3456-7890</li>
+                        <li><i class="fas fa-envelope"></i> contato@draanasilva.com.br</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Horários</h4>
+                    <ul>
+                        <li>Segunda a Sexta: 8h às 18h</li>
+                        <li>Sábado: 8h às 12h</li>
+                        <li>Domingo: Fechado</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Dra. Ana Silva. Todos os direitos reservados.</p>
+                <p>CRO-SP 12345 | CNPJ: 12.345.678/0001-90</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
