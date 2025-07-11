@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Premium - Dr. Carlos Mendes | Dicas Exclusivas de Transformação Dental</title>
+    <meta name="description" content="Blog exclusivo com dicas premium de transformação dental, casos de sucesso e segredos dos sorrisos perfeitos pelo Dr. Carlos Mendes.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .blog-hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .blog-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-hero p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .blog-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .blog-stat {
+            text-align: center;
+            color: white;
+        }
+
+        .blog-stat-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            display: block;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .blog-content {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-card.featured {
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .blog-card.featured:hover {
+            transform: scale(1.08) translateY(-10px);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 2.5rem;
+        }
+
+        .blog-category {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .blog-card.featured .blog-category {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .blog-card h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .blog-card.featured h3 {
+            color: white;
+        }
+
+        .blog-card p {
+            color: #4a5568;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .blog-card.featured p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .blog-card.featured .blog-meta {
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .blog-meta-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+
+        .blog-card.featured .blog-meta-left {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .blog-meta i {
+            color: #ff6b6b;
+        }
+
+        .blog-card.featured .blog-meta i {
+            color: white;
+        }
+
+        .blog-views {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 107, 107, 0.1);
+            color: #ff6b6b;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .blog-card.featured .blog-views {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .read-more {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+        }
+
+        .read-more:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+        }
+
+        .blog-card.featured .read-more {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .blog-card.featured .read-more:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .blog-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            text-align: center;
+        }
+
+        .blog-cta h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .blog-cta p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .blog-cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .blog-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .blog-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .blog-cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-brand">
+                <div class="logo-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <span>Dr. Carlos Mendes</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#sobre">Sobre</a></li>
+                <li><a href="index.html#transformacoes">Transformações</a></li>
+                <li><a href="index.html#depoimentos">Depoimentos</a></li>
+                <li><a href="blog.html" aria-current="page">Blog</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+            <a href="index.html#agendamento" class="nav-cta">
+                <i class="fas fa-calendar-plus"></i>
+                Consulta VIP
+            </a>
+            <button class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Blog Hero -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="blog-hero-content">
+                <div class="section-badge">
+                    <i class="fas fa-crown"></i>
+                    <span>Conteúdo Premium Exclusivo</span>
+                </div>
+                <h1>Segredos dos Sorrisos <span class="gradient-text">Perfeitos</span></h1>
+                <p>Descubra os segredos por trás das transformações mais incríveis e aprenda como conquistar o sorriso dos seus sonhos com dicas exclusivas do Dr. Carlos Mendes</p>
+                
+                <div class="blog-stats">
+                    <div class="blog-stat">
+                        <span class="blog-stat-number">50+</span>
+                        <span class="blog-stat-label">Artigos Exclusivos</span>
+                    </div>
+                    <div class="blog-stat">
+                        <span class="blog-stat-number">10K+</span>
+                        <span class="blog-stat-label">Leitores Mensais</span>
+                    </div>
+                    <div class="blog-stat">
+                        <span class="blog-stat-number">95%</span>
+                        <span class="blog-stat-label">Aplicam as Dicas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blog-content">
+        <div class="container">
+            <div class="blog-grid">
+                <article class="blog-card featured">
+                    <img src="https://images.pexels.com/photos/6812540/pexels-photo-6812540.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Lentes de contato dental premium">
+                    <div class="blog-card-content">
+                        <span class="blog-category">
+                            <i class="fas fa-crown"></i>
+                            Transformação Premium
+                        </span>
+                        <h3>O Segredo das Lentes de Contato Dental que os Famosos Usam</h3>
+                        <p>Descubra a técnica exclusiva que uso para criar sorrisos de cinema. Revelando pela primeira vez os 7 segredos que fazem a diferença entre um resultado comum e uma transformação extraordinária.</p>
+                        <div class="blog-meta">
+                            <div class="blog-meta-left">
+                                <span><i class="fas fa-calendar"></i> 20 Jan 2024</span>
+                                <span><i class="fas fa-clock"></i> 8 min</span>
+                            </div>
+                            <div class="blog-views">
+                                <i class="fas fa-fire"></i>
+                                <span>2.5K visualizações</span>
+                            </div>
+                        </div>
+                        <a href="#" class="read-more">
+                            <i class="fas fa-crown"></i>
+                            Ler Artigo Premium
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://images.pexels.com/photos/6812589/pexels-photo-6812589.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Ortodontia invisível">
+                    <div class="blog-card-content">
+                        <span class="blog-category">
+                            <i class="fas fa-eye-slash"></i>
+                            Ortodontia Invisível
+                        </span>
+                        <h3>Invisalign vs Aparelho Tradicional: A Verdade que Ninguém Conta</h3>
+                        <p>Análise completa e imparcial dos prós e contras de cada tratamento. Descubra qual é realmente o melhor para seu caso específico e evite erros custosos.</p>
+                        <div class="blog-meta">
+                            <div class="blog-meta-left">
+                                <span><i class="fas fa-calendar"></i> 18 Jan 2024</span>
+                                <span><i class="fas fa-clock"></i> 12 min</span>
+                            </div>
+                            <div class="blog-views">
+                                <i class="fas fa-eye"></i>
+                                <span>1.8K visualizações</span>
+                            </div>
+                        </div>
+                        <a href="#" class="read-more">
+                            <i class="fas fa-arrow-right"></i>
+                            Ler Artigo Completo
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://images.pexels.com/photos/6812571/pexels-photo-6812571.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Clareamento dental">
+                    <div class="blog-card-content">
+                        <span class="blog-category">
+                            <i class="fas fa-sun"></i>
+                            Clareamento Premium
+                        </span>
+                        <h3>Como Conseguir Dentes 8 Tons Mais Brancos em 45 Minutos</h3>
+                        <p>O protocolo exclusivo de clareamento laser que desenvolvi ao longo de 15 anos. Resultados que duram 3x mais tempo que métodos convencionais.</p>
+                        <div class="blog-meta">
+                            <div class="blog-meta-left">
+                                <span><i class="fas fa-calendar"></i> 15 Jan 2024</span>
+                                <span><i class="fas fa-clock"></i> 6 min</span>
+                            </div>
+                            <div class="blog-views">
+                                <i class="fas fa-eye"></i>
+                                <span>3.2K visualizações</span>
+                            </div>
+                        </div>
+                        <a href="#" class="read-more">
+                            <i class="fas fa-arrow-right"></i>
+                            Ler Artigo Completo
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://images.pexels.com/photos/6812582/pexels-photo-6812582.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Implantes dentários">
+                    <div class="blog-card-content">
+                        <span class="blog-category">
+                            <i class="fas fa-cog"></i>
+                            Implantodontia
+                        </span>
+                        <h3>Implantes com Carga Imediata: Dente Novo no Mesmo Dia</h3>
+                        <p>A revolução dos implantes que permite você sair do consultório com dentes novos no mesmo dia da cirurgia. Tecnologia suíça que mudou tudo.</p>
+                        <div class="blog-meta">
+                            <div class="blog-meta-left">
+                                <span><i class="fas fa-calendar"></i> 12 Jan 2024</span>
+                                <span><i class="fas fa-clock"></i> 10 min</span>
+                            </div>
+                            <div class="blog-views">
+                                <i class="fas fa-eye"></i>
+                                <span>2.1K visualizações</span>
+                            </div>
+                        </div>
+                        <a href="#" class="read-more">
+                            <i class="fas fa-arrow-right"></i>
+                            Ler Artigo Completo
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://images.pexels.com/photos/6812564/pexels-photo-6812564.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Cuidados dentários">
+                    <div class="blog-card-content">
+                        <span class="blog-category">
+                            <i class="fas fa-shield-alt"></i>
+                            Cuidados Premium
+                        </span>
+                        <h3>Os 10 Erros Fatais que Destroem Seu Sorriso (E Como Evitá-los)</h3>
+                        <p>Erros comuns que 90% das pessoas cometem diariamente e que podem arruinar anos de tratamento. Lista exclusiva baseada em 15 anos de experiência.</p>
+                        <div class="blog-meta">
+                            <div class="blog-meta-left">
+                                <span><i class="fas fa-calendar"></i> 10 Jan 2024</span>
+                                <span><i class="fas fa-clock"></i> 7 min</span>
+                            </div>
+                            <div class="blog-views">
+                                <i class="fas fa-eye"></i>
+                                <span>4.1K visualizações</span>
+                            </div>
+                        </div>
+                        <a href="#" class="read-more">
+                            <i class="fas fa-arrow-right"></i>
+                            Ler Artigo Completo
+                        </a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <img src="https://images.pexels.com/photos/6812595/pexels-photo-6812595.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Harmonização facial">
+                    <div class="blog-card-content">
+                        <span class="blog-category">
+                            <i class="fas fa-magic"></i>
+                            Harmonização
+                        </span>
+                        <h3>Harmonização Facial: O Complemento Perfeito do Sorriso Ideal</h3>
+                        <p>Como a harmonização facial potencializa os resultados do seu tratamento dental. O protocolo que uso para criar rostos equilibrados e naturais.</p>
+                        <div class="blog-meta">
+                            <div class="blog-meta-left">
+                                <span><i class="fas fa-calendar"></i> 8 Jan 2024</span>
+                                <span><i class="fas fa-clock"></i> 9 min</span>
+                            </div>
+                            <div class="blog-views">
+                                <i class="fas fa-eye"></i>
+                                <span>1.9K visualizações</span>
+                            </div>
+                        </div>
+                        <a href="#" class="read-more">
+                            <i class="fas fa-arrow-right"></i>
+                            Ler Artigo Completo
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="blog-cta">
+        <div class="container">
+            <div class="section-badge">
+                <i class="fas fa-rocket"></i>
+                <span>Transforme Seu Sorriso Agora</span>
+            </div>
+            <h2>Pronto Para Sua <span class="gradient-text">Transformação</span>?</h2>
+            <p>Depois de ler sobre todas essas transformações incríveis, que tal começar a sua? Agende sua consulta VIP gratuita e descubra como posso transformar seu sorriso.</p>
+            <div class="blog-cta-buttons">
+                <a href="index.html#agendamento" class="btn btn-primary btn-large pulse">
+                    <i class="fas fa-calendar-plus"></i>
+                    Agendar Consulta VIP Gratuita
+                </a>
+                <a href="https://wa.me/5511999999999" class="btn btn-secondary btn-large" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp Direto
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="logo-icon">
+                            <i class="fas fa-gem"></i>
+                        </div>
+                        <span>Dr. Carlos Mendes</span>
+                    </div>
+                    <p>Transformando sorrisos e vidas há mais de 15 anos com tecnologia de ponta e atendimento premium.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="https://wa.me/5511999999999" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Transformações</h4>
+                    <ul>
+                        <li><a href="index.html#transformacoes">Lentes Premium</a></li>
+                        <li><a href="index.html#transformacoes">Ortodontia Invisível</a></li>
+                        <li><a href="index.html#transformacoes">Clareamento Laser</a></li>
+                        <li><a href="index.html#transformacoes">Implantes Premium</a></li>
+                        <li><a href="index.html#transformacoes">Harmonização Facial</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contato Premium</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Paulista, 2000 - São Paulo</li>
+                        <li><i class="fas fa-phone"></i> (11) 3456-7890</li>
+                        <li><i class="fab fa-whatsapp"></i> (11) 99999-9999</li>
+                        <li><i class="fas fa-envelope"></i> contato@drcarlosmendes.com.br</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Atendimento VIP</h4>
+                    <ul>
+                        <li>Segunda a Sexta: 8h às 20h</li>
+                        <li>Sábado: 8h às 16h</li>
+                        <li>Domingo: Emergências</li>
+                        <li>WhatsApp: 24h por dia</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-info">
+                    <p>&copy; 2024 Dr. Carlos Mendes. Todos os direitos reservados.</p>
+                    <p>CRO-SP 54321 | CNPJ: 98.765.432/0001-10</p>
+                </div>
+                <div class="footer-certifications">
+                    <span>Certificações:</span>
+                    <img src="https://via.placeholder.com/60x30/2563eb/ffffff?text=USP" alt="USP">
+                    <img src="https://via.placeholder.com/60x30/10b981/ffffff?text=INVISALIGN" alt="Invisalign">
+                    <img src="https://via.placeholder.com/60x30/f59e0b/ffffff?text=NOBEL" alt="Nobel Biocare">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
